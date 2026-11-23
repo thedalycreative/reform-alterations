@@ -60,7 +60,7 @@ This repository holds the business's one-page marketing website. It's plain HTML
 | ❓ | **FAQ** | Payment, deposits, quote changes in both directions, rework and specialist garments, using native `<details>` |
 | 📱 | **Responsive** | Tested at 390 px (phone) and 1280 px (desktop); tables and grids stack cleanly |
 | ♿ | **Accessible basics** | Semantic landmarks, alt text, 44 px tap targets, visible focus rings, `aria-live` estimate, reduced-motion support |
-| ⚡ | **Lightweight** | About 31 KB of HTML plus a compressed logo (85 KB) and favicon; the only external requests are Google Fonts |
+| ⚡ | **Lightweight** | About 31 KB of HTML plus a compressed logo (about 90 KB) and favicon; the only external requests are Google Fonts |
 
 ## 📸 Screenshots
 
