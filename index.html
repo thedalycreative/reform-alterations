@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RE:FORM Alterations</title>
+<meta name="description" content="RE:FORM — professional alterations and tailoring in Belmont, WA. Hems, tapers, suits, bridal and formalwear, with at-home fittings, collection and delivery.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: warm, confident, retro sign-shop — friendly expert, plain prices
+   IDEA: a vintage tailor's shopfront and its price ticket / tag
+   PICTURE: the RE:FORM badge lit on charcoal, with a running tawny stitch line
+   COLOUR and TYPE: charcoal ground, cream ink, tawny accent, sand panels; Oleo Script + Montserrat
+   LAYOUT: centred hero sign, then bands: services, price tickets, mobile, estimator, quote form */
+:root{color-scheme:dark;--bg:#0B0B0B;--bg2:#141311;--ink:#FFF3E3;--mut:#cfc3b2;--gold:#FFC107;--sand:#E8D9C3;--line:#2b2824;--card:#181714}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Montserrat,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Oleo Script",Georgia,serif;font-weight:700;line-height:1.1;margin:0 0 .4em;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,50px)}h3{font-size:25px}
+p{margin:0 0 1em;max-width:66ch}
+a{color:var(--gold)}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(48px,6vw,96px) max(5vw,16px)}
+.lede{font-size:18px;color:var(--mut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 24px;border-radius:999px;font:700 16px Montserrat,sans-serif;text-decoration:none;border:2px solid var(--gold);cursor:pointer;transition:transform .15s}
+.btn.solid{background:var(--gold);color:#0B0B0B}.btn.ghost{background:none;color:var(--ink);border-color:var(--ink)}
+.btn:hover{transform:translateY(-2px)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(11,11,11,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;padding:8px max(5vw,16px);flex-wrap:wrap}
+nav img{height:44px;width:auto;display:block}
+nav ul{display:flex;gap:4px 18px;list-style:none;margin:0 0 0 auto;padding:0;flex-wrap:wrap}
+nav ul a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px;padding:10px 2px;display:inline-block}
+nav ul a:hover{color:var(--gold)}
+nav ul+.btn{margin-left:0}nav .btn{margin-left:auto;min-height:40px;padding:0 18px;font-size:14px}
+/* hero */
+.hero{position:relative;text-align:center;padding:clamp(32px,5vw,72px) max(5vw,16px) clamp(48px,6vw,88px);background:radial-gradient(60% 55% at 50% 38%,#2a2210 0%,#0B0B0B 70%)}
+.hero img{width:min(760px,100%);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 18px 40px rgba(255,193,7,.18));animation:rise .9s ease-out both}
+.hero h1{font-size:clamp(34px,5.2vw,58px);margin:18px auto 12px;max-width:20ch}
+.hero p{margin:0 auto 26px;font-size:18px;color:var(--mut)}
+.hero .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.stitch{display:block;width:100%;height:18px}
+@keyframes rise{from{opacity:0;transform:translateY(16px) scale(.98)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+.trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.trust div{background:var(--bg2);padding:22px 20px;text-align:center}
+.trust b{display:block;color:var(--gold);font-size:15px}.trust span{font-size:14px;color:var(--mut)}
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.card svg{width:52px;height:52px;margin-bottom:12px}
+.card ul{padding-left:18px;margin:0;color:var(--mut)}.card li{margin:4px 0}
+.card .from{display:inline-block;margin-top:14px;font-weight:700;color:var(--gold)}
+/* prices */
+.prices{background:var(--sand);color:#1b1712}
+.prices h2{color:#0B0B0B}.prices .lede{color:#4a4036}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.tabs button{min-height:44px;padding:0 18px;border-radius:999px;border:2px solid #0B0B0B;background:transparent;color:#0B0B0B;font:600 15px Montserrat,sans-serif;cursor:pointer}
+.tabs button[aria-pressed=true]{background:#0B0B0B;color:var(--ink)}
+.tickets{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.ticket{position:relative;background:#FFF3E3;border-radius:12px;padding:16px 18px 16px 34px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:0 2px 0 #cdbb9f}
+.ticket::before{content:"";position:absolute;left:12px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--sand);box-shadow:inset 0 0 0 2px #b9a689}
+.ticket span{font-weight:500;font-size:15px}
+.ticket b{white-space:nowrap;font-size:18px}.ticket small{font-weight:500;font-size:12px;color:#6b5e4e;display:block;text-align:right}
+.note{font-size:14px;color:#4a4036;margin-top:20px;max-width:none}
+/* mobile */
+.split{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:start}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left}
+th{font-weight:700;color:var(--gold);font-size:14px}
+td.n,th.n{text-align:right;white-space:nowrap}
+.tbl{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px 14px}
+.check{list-style:none;padding:0;margin:0}
+.check li{position:relative;padding:6px 0 6px 32px}
+.check li::before{content:"";position:absolute;left:0;top:9px;width:20px;height:20px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3 3 7-7' fill='none' stroke='%230B0B0B' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.areas span{border:1px dashed var(--gold);border-radius:999px;padding:6px 14px;font-size:14px}
+/* turnaround */
+.turn{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:26px}
+.turn div{border-top:3px solid var(--gold);padding-top:14px}
+.turn b{display:block;font-size:17px}.turn span{color:var(--mut);font-size:15px}
+/* steps */
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:26px;list-style:none;padding:0}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#0B0B0B;font:700 20px "Oleo Script",serif;margin-bottom:12px}
+.steps b{display:block;margin-bottom:4px}.steps span{color:var(--mut);font-size:15px}
+/* estimator */
+.est{background:var(--bg2);border-block:1px solid var(--line)}
+.estgrid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:28px;margin-top:24px;align-items:start}
+.items{display:grid;gap:8px}
+.item{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 10px 8px 16px}
+.item span{flex:1;font-size:15px}.item em{font-style:normal;color:var(--mut);font-size:14px;white-space:nowrap}
+.qty{display:flex;align-items:center;gap:4px}
+.qty button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#24221e;color:var(--ink);font-size:20px;cursor:pointer}
+.qty output{width:26px;text-align:center;font-weight:700}
+.item.on{border-color:var(--gold)}
+.ticketbig{position:sticky;top:90px;background:var(--ink);color:#0B0B0B;border-radius:20px;padding:26px}
+.ticketbig h3{font-size:22px}
+.ticketbig label{display:block;font-weight:600;font-size:14px;margin:12px 0 6px}
+select,input,textarea{width:100%;font:16px Montserrat,sans-serif;padding:12px 14px;border-radius:10px;border:1.5px solid #bfae95;background:#fff;color:#0B0B0B}
+.toggle{display:flex;align-items:center;gap:10px;margin-top:14px;font-weight:600;font-size:15px;cursor:pointer}
+.toggle input{width:22px;height:22px;accent-color:#0B0B0B}
+.lines{list-style:none;padding:0;margin:16px 0 0;border-top:1.5px dashed #bfae95;font-size:14px}
+.lines li{display:flex;justify-content:space-between;gap:10px;padding:6px 0}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid #0B0B0B;margin-top:8px;padding-top:12px}
+.total b{font:700 clamp(36px,5vw,48px) "Oleo Script",serif}
+.warn{background:#fff0c2;border-radius:8px;padding:8px 10px;font-size:13px;margin-top:10px}
+.ticketbig .btn{width:100%;margin-top:16px;background:#0B0B0B;color:var(--ink);border-color:#0B0B0B}
+.fine{font-size:13px;color:#5a5045;margin:10px 0 0}
+/* form */
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px;max-width:860px}
+form label{font-weight:600;font-size:14px;display:grid;gap:6px}
+form .full{grid-column:1/-1}
+form input,form select,form textarea{border-color:#3a3631;background:#181714;color:var(--ink)}
+.sent{display:none;background:var(--card);border:1px solid var(--gold);border-radius:18px;padding:24px;margin-top:24px;max-width:860px}
+.sent pre{white-space:pre-wrap;background:#0B0B0B;padding:14px;border-radius:10px;font-size:14px}
+/* faq & footer */
+details{border-bottom:1px solid var(--line);padding:16px 0}
+summary{cursor:pointer;font-weight:700;font-size:17px;min-height:28px}
+details p{color:var(--mut);margin:10px 0 0}
+footer{background:#000;border-top:1px solid var(--line);padding:48px max(5vw,16px) 32px}
+footer .wrap{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+footer img{width:220px;height:auto}
+footer p,footer li{color:var(--mut);font-size:14px}
+footer ul{list-style:none;padding:0;margin:0}footer li{margin:6px 0}
+footer .legal{grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px;font-size:13px}
+@media(max-width:900px){nav ul+.btn{margin-left:auto}.cards,.split,.estgrid{grid-template-columns:minmax(0,1fr)}.turn,.steps,.trust{grid-template-columns:repeat(2,minmax(0,1fr))}footer .wrap{grid-template-columns:1fr}.ticketbig{position:static}nav ul{display:none}}
+@media(max-width:600px){form{grid-template-columns:minmax(0,1fr)}.turn,.steps{grid-template-columns:minmax(0,1fr)}.item{flex-wrap:wrap}.item span{flex-basis:100%}.item em{flex:1}th,td{padding:12px 6px;font-size:13px}td.n,th.n{white-space:normal}nav img{height:36px}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a href="#top" aria-label="RE:FORM home"><img src="reform-logo-small.png" alt="RE:FORM Alterations &amp; Tailoring"></a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#prices">Prices</a></li>
+      <li><a href="#mobile">Mobile tailoring</a></li>
+      <li><a href="#estimate">Estimate</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn solid" href="#quote">Get a quote</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img src="reform-logo.png" alt="RE:FORM Alterations &amp; Tailoring logo — vintage sewing machine, star and thread spool" width="1000" height="593">
+  <h1>Clothes that fit like they were made for you</h1>
+  <p>Qualified alterations and tailoring from a home studio in Belmont, WA, with at-home fittings, collection and delivery across Perth's eastern suburbs.</p>
+  <div class="ctas">
+    <a class="btn solid" href="#quote">Request a quote</a>
+    <a class="btn ghost" href="#prices">See prices</a>
+  </div>
+</header>
+<svg class="stitch" viewBox="0 0 1200 18" preserveAspectRatio="none" aria-hidden="true"><path d="M0 9H1200" stroke="#FFC107" stroke-width="3" stroke-dasharray="18 12" stroke-linecap="round"/></svg>
+
+<section class="trust" aria-label="Why RE:FORM">
+  <div><b>Honours-qualified</b><span>Fashion &amp; textiles degree</span></div>
+  <div><b>Itemised quotes</b><span>Approved before work starts</span></div>
+  <div><b>5–7 business days</b><span>Express in 48 hours</span></div>
+  <div><b>We come to you</b><span>Fittings, pick-up &amp; return</span></div>
+</section>
+
+<section class="band" id="services">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <p class="lede">From a quick hem to restructuring a suit, every job gets the same care: measured properly, sewn properly, finished properly.</p>
+    <div class="cards">
+      <article class="card">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="25" fill="#FFC107"/><path d="M17 12h18l-2 30h-5l-2-18-2 18h-5z" fill="#0B0B0B"/><path d="M14 38h24" stroke="#FFF3E3" stroke-width="2" stroke-dasharray="3 3"/></svg>
+        <h3>Standard alterations</h3>
+        <ul><li>Trouser, jeans, skirt &amp; dress hems</li><li>Taking in and tapering</li><li>Waist adjustments &amp; zip replacement</li><li>Repairs, patches &amp; buttons</li></ul>
+        <span class="from">From $5 · clear set prices</span>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="25" fill="#FFC107"/><path d="M15 14l11 8 11-8 4 26H11z" fill="#0B0B0B"/><path d="M26 22v18" stroke="#FFC107" stroke-width="2"/><circle cx="26" cy="29" r="1.6" fill="#FFF3E3"/><circle cx="26" cy="35" r="1.6" fill="#FFF3E3"/></svg>
+        <h3>Specialist tailoring</h3>
+        <ul><li>Bridal &amp; formalwear</li><li>Suit restructuring &amp; advanced fitting</li><li>Vintage garment restoration</li><li>Redesign, reconstruction &amp; resizing</li><li>Delicate, beaded &amp; specialty fabrics</li></ul>
+        <span class="from">Individually quoted</span>
+      </article>
+      <article class="card">
+        <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="25" fill="#FFC107"/><path d="M12 26l14-12 14 12v14H12z" fill="#0B0B0B"/><path d="M20 40V30h12v10" fill="#FFF3E3"/><path d="M29 10l1.6 3.4 3.7.4-2.8 2.5.8 3.7-3.3-1.9-3.3 1.9.8-3.7-2.8-2.5 3.7-.4z" fill="#FFF3E3"/></svg>
+        <h3>Mobile tailoring</h3>
+        <ul><li>At-home measuring, fitting &amp; pinning</li><li>Garment collection &amp; return delivery</li><li>Final try-on for fit-dependent work</li><li>Belmont &amp; surrounding suburbs</li></ul>
+        <span class="from">From $25 + alterations</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band prices" id="prices">
+  <div class="wrap">
+    <h2>Straightforward prices</h2>
+    <p class="lede">Starting prices for our most common work. You'll always get an itemised quote to approve before a stitch goes in.</p>
+    <div class="tabs" role="group" aria-label="Filter prices" id="tabs"></div>
+    <div class="tickets" id="tickets"></div>
+    <p class="note">All prices in AUD and are starting rates. Fabric, lining, construction and complexity can affect the final quote; specialist materials are extra. Minimum workshop charge $20.</p>
+  </div>
+</section>
+
+<section class="band" id="mobile">
+  <div class="wrap split">
+    <div>
+      <h2>Tailoring that comes to you</h2>
+      <p class="lede">Book a fitting at home or work, or have garments collected and returned. Mobile fees are added to your alteration costs and include one collection and one return trip.</p>
+      <div class="tbl">
+        <table>
+          <thead><tr><th>Distance from Belmont</th><th class="n">Collection &amp; return</th><th class="n">At-home fitting + return</th></tr></thead>
+          <tbody>
+            <tr><td>Within 5 km</td><td class="n">$25</td><td class="n">$55</td></tr>
+            <tr><td>5–10 km</td><td class="n">$35</td><td class="n">$65</td></tr>
+            <tr><td>10–15 km</td><td class="n">$45</td><td class="n">$80</td></tr>
+            <tr><td>Beyond 15 km</td><td class="n">By quote</td><td class="n">By quote</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top:14px;font-size:14px;color:var(--mut)">At-home fittings have a $60 minimum alteration spend (excluding the mobile fee). Extra fitting appointments, longer fittings or extra trips may cost more, and we'll always tell you before booking.</p>
+    </div>
+    <div>
+      <h3>At-home fitting includes</h3>
+      <ul class="check">
+        <li>A scheduled home appointment of up to 30 minutes</li>
+        <li>Professional fitting, measuring and pinning</li>
+        <li>Collection of your garments for alteration</li>
+        <li>Return delivery</li>
+        <li>A final try-on for fit-dependent work</li>
+      </ul>
+      <h3 style="margin-top:28px">Collection &amp; return</h3>
+      <p style="color:var(--mut)">Best for garments already measured or clearly pinned and marked that don't need an in-person fitting.</p>
+      <h3 style="margin-top:28px">Where we go</h3>
+      <div class="areas"><span>Belmont</span><span>Cloverdale</span><span>Rivervale</span><span>Redcliffe</span><span>Kewdale</span><span>Ascot</span><span>Burswood</span><span>Victoria Park</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2>Turnaround</h2>
+    <div class="turn">
+      <div><b>Standard alterations</b><span>5–7 business days at standard rates</span></div>
+      <div><b>Express</b><span>Within 48 hours, +50% on alterations, subject to capacity</span></div>
+      <div><b>Specialist tailoring</b><span>Timeline quoted with your job</span></div>
+      <div><b>Bridal &amp; formalwear</b><span>A project timeline agreed with you, working back from your date</span></div>
+    </div>
+    <h2 style="margin-top:56px">How it works</h2>
+    <ol class="steps">
+      <li><b>Tell us what you need</b><span>Send a quote request or use the estimator below.</span></li>
+      <li><b>Fit &amp; quote</b><span>Drop off in Belmont or book a home fitting. You approve an itemised quote.</span></li>
+      <li><b>We get sewing</b><span>Your garments are altered with care in the studio.</span></li>
+      <li><b>Pick up or delivery</b><span>Pay, then collect or have it delivered. Try-on included for fitted work.</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band est" id="estimate">
+  <div class="wrap">
+    <h2>Estimate your alterations</h2>
+    <p class="lede">Add the garments you have, choose drop-off or mobile, and see a starting estimate. Your final quote is confirmed once we see the garment.</p>
+    <div class="estgrid">
+      <div class="items" id="items"></div>
+      <aside class="ticketbig" aria-live="polite">
+        <h3>Your estimate</h3>
+        <label for="mode">How would you like to do it?</label>
+        <select id="mode">
+          <option value="drop">Drop-off in Belmont</option>
+          <option value="collect">Collection &amp; return</option>
+          <option value="fit">At-home fitting + return</option>
+        </select>
+        <div id="distWrap" hidden>
+          <label for="dist">Distance from Belmont</label>
+          <select id="dist">
+            <option value="0">Within 5 km</option>
+            <option value="1">5–10 km</option>
+            <option value="2">10–15 km</option>
+            <option value="3">Beyond 15 km</option>
+          </select>
+        </div>
+        <label class="toggle"><input type="checkbox" id="express"> Express (48 hours, +50%)</label>
+        <ul class="lines" id="lines"></ul>
+        <div class="total"><span>Estimate from</span><b id="total">$0</b></div>
+        <div class="warn" id="warn" hidden></div>
+        <button class="btn" id="useEst" type="button">Send this with my quote request</button>
+        <p class="fine">Starting prices only. Final price confirmed in your itemised quote.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="quote">
+  <div class="wrap">
+    <h2>Request a quote</h2>
+    <p class="lede">Tell us about your garments and we'll reply with an itemised quote and the next available fitting or drop-off time.</p>
+    <form id="qform" novalidate>
+      <label>Name<input id="f-name" name="name" autocomplete="name" required></label>
+      <label>Phone<input id="f-phone" name="phone" type="tel" autocomplete="tel" required></label>
+      <label>Email<input id="f-email" name="email" type="email" autocomplete="email"></label>
+      <label>Suburb<input id="f-suburb" name="suburb" autocomplete="address-level2"></label>
+      <label>Type of work
+        <select id="f-type" name="type">
+          <option>Standard alterations</option><option>Specialist tailoring</option><option>Bridal / formalwear</option><option>Not sure yet</option>
+        </select></label>
+      <label>Drop-off or mobile?
+        <select id="f-mode" name="mode">
+          <option>Drop-off in Belmont</option><option>Collection &amp; return</option><option>At-home fitting</option>
+        </select></label>
+      <label class="full">What needs doing?<textarea id="f-msg" name="message" rows="6" placeholder="e.g. 2 pairs of work trousers to hem, a dress strap to shorten, needed by 12 December"></textarea></label>
+      <label>Needed by (optional)<input id="f-date" name="date" type="date"></label>
+      <div style="display:flex;align-items:end"><button class="btn solid" type="submit" style="width:100%">Send request</button></div>
+      <p class="full" id="ferr" role="alert" style="color:var(--gold);margin:0"></p>
+    </form>
+    <div class="sent" id="sent">
+      <h3>Thanks, nearly done!</h3>
+      <p id="sentMsg">Your email app should open with your request ready to send. If it doesn't, copy the message below and email it to <b>hello@reformalterations.com.au</b>.</p>
+      <pre id="sentBody"></pre>
+      <button class="btn solid" id="copyBtn" type="button">Copy message</button>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <h2>Good to know</h2>
+    <details><summary>Do I need an appointment to drop off?</summary><p>Yes. RE:FORM is a home-based studio in Belmont, so drop-offs and fittings are by appointment. Send a quote request and we'll find a time.</p></details>
+    <details><summary>When do I pay?</summary><p>Payment is due before garments are collected or delivered. Specialist or high-value projects, including bridal work, may need a deposit.</p></details>
+    <details><summary>Will the price change after I approve the quote?</summary><p>Not for the work you approved. If you ask for changes after approval, any extra work is quoted before we do it. And if we find the job needs a different price once we start, for example because of hidden construction or a fabric issue, we'll contact you to agree it before going any further.</p></details>
+    <details><summary>What if something isn't right?</summary><p>If work wasn't completed as agreed, we'll assess it and put it right at no additional labour charge.</p></details>
+    <details><summary>Can you work with bridal, beaded or vintage pieces?</summary><p>Yes, within reason. Delicate, embellished and vintage garments are quoted individually after an inspection, with a timeline agreed up front. If a piece is too fragile or complex to alter safely, we'll tell you honestly.</p></details>
+    <details><summary>Do you work with businesses?</summary><p>We welcome enquiries from boutiques, formalwear and bridal retailers, and corporate wardrobe programs. Get in touch to talk about regular work.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="reform-logo-small.png" alt="RE:FORM Alterations &amp; Tailoring">
+      <p>Professional alterations and tailoring, backed by an honours qualification in fashion and textiles.</p>
+    </div>
+    <div>
+      <h3 style="font-size:22px">Contact</h3>
+      <ul>
+        <!-- PLACEHOLDER contact details: replace before going live -->
+        <li>Phone: <a href="tel:+61400000000">0400 000 000</a></li>
+        <li>Email: <a href="mailto:hello@reformalterations.com.au">hello@reformalterations.com.au</a></li>
+        <li>Instagram: <a href="https://instagram.com/reform.alterations">@reform.alterations</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="font-size:22px">Studio</h3>
+      <ul>
+        <li>Belmont, Western Australia</li>
+        <li>By appointment, Monday–Saturday</li>
+        <li>Mobile service across Perth's eastern suburbs</li>
+      </ul>
+    </div>
+    <p class="legal">© <span id="yr">2026</span> RE:FORM Alterations &amp; Tailoring. Prices in AUD and subject to garment inspection.</p>
+  </div>
+</footer>
+
+<script>
+{
+  // Set this to a form service URL (e.g. Formspree) to receive requests directly. Left blank, the form opens an email instead.
+  const FORM_ENDPOINT = '';
+  const EMAIL = 'hello@reformalterations.com.au';
+  const PRICES = [
+    ['trousers','Standard trouser hem',25],['trousers','Jeans hem (original finish kept)',35],['trousers','Trouser taper',45],['trousers','Trouser waist adjustment',40],['trousers','Shorts hem',25],['trousers','Trouser zip replacement',45],
+    ['dresses','Skirt hem (unlined)',35],['dresses','Dress hem (unlined)',40],['dresses','Dress hem (lined / layered)',65],['dresses','Dress side-seam adjustment',50],['dresses','Dress strap shortening',25],
+    ['tops','Shirt sleeve shortening',30],['tops','Shirt body taper',40],['tops','Suit jacket sleeve shortening',65],['tops','Suit jacket take-in',75],
+    ['repairs','Minor repair or patch (visible mending)',15],['repairs','Button replacement',5]
+  ];
+  const CATS = [['all','All'],['trousers','Trousers & shorts'],['dresses','Dresses & skirts'],['tops','Shirts & jackets'],['repairs','Repairs']];
+  const MOBILE = {collect:[25,35,45,null], fit:[55,65,80,null]};
+  const $ = id => document.getElementById(id);
+  const money = n => '$' + n.toLocaleString('en-AU',{minimumFractionDigits:n%1?2:0,maximumFractionDigits:2});
+
+  // price list
+  let cat = 'all';
+  const drawTickets = () => {
+    $('tabs').innerHTML = CATS.map(([k,l]) => `<button type="button" data-k="${k}" aria-pressed="${k===cat}">${l}</button>`).join('');
+    $('tickets').innerHTML = PRICES.filter(p => cat==='all' || p[0]===cat)
+      .map(p => `<div class="ticket"><span>${p[1]}</span><b><small>from</small>${money(p[2])}</b></div>`).join('');
+  };
+  $('tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { cat = b.dataset.k; drawTickets(); } });
+  drawTickets();
+
+  // estimator
+  const qty = PRICES.map(() => 0);
+  $('items').innerHTML = PRICES.map((p,i) => `<div class="item" id="it${i}"><span>${p[1]}</span><em>${money(p[2])} each</em><div class="qty"><button type="button" data-i="${i}" data-d="-1" aria-label="Remove one ${p[1]}">−</button><output id="q${i}">0</output><button type="button" data-i="${i}" data-d="1" aria-label="Add one ${p[1]}">+</button></div></div>`).join('');
+  $('items').addEventListener('click', e => {
+    const b = e.target.closest('button[data-i]'); if (!b) return;
+    const i = +b.dataset.i; qty[i] = Math.max(0, Math.min(20, qty[i] + +b.dataset.d));
+    $('q'+i).textContent = qty[i]; $('it'+i).classList.toggle('on', qty[i] > 0); calc();
+  });
+  let summary = '';
+  const calc = () => {
+    const mode = $('mode').value, d = +$('dist').value, ex = $('express').checked;
+    $('distWrap').hidden = mode === 'drop';
+    const lines = []; let sub = 0;
+    PRICES.forEach((p,i) => { if (qty[i]) { const v = qty[i]*p[2]; sub += v; lines.push([`${qty[i]} × ${p[1]}`, v]); } });
+    let alt = sub;
+    if (sub > 0 && sub < 20) { lines.push(['Minimum workshop charge top-up', 20 - sub]); alt = 20; }
+    if (ex && alt) { lines.push(['Express service (+50%)', alt * 0.5]); }
+    let total = alt + (ex && alt ? alt*0.5 : 0), mobileNote = '';
+    if (mode !== 'drop') {
+      const fee = MOBILE[mode][d], label = mode === 'fit' ? 'At-home fitting + return' : 'Collection & return';
+      if (fee == null) mobileNote = `${label} beyond 15 km is quoted separately.`;
+      else { lines.push([label, fee]); total += fee; }
+    }
+    const warns = [];
+    if (mode === 'fit' && sub < 60) warns.push(`At-home fittings have a $60 minimum alteration spend (you're at ${money(sub)}).`);
+    if (mobileNote) warns.push(mobileNote);
+    $('warn').hidden = !warns.length; $('warn').textContent = warns.join(' ');
+    $('lines').innerHTML = lines.length ? lines.map(l => `<li><span>${l[0]}</span><span>${money(l[1])}</span></li>`).join('') : '<li><span>Add garments on the left to start</span></li>';
+    $('total').textContent = money(total);
+    summary = lines.length ? 'Estimate:\n' + lines.map(l => `- ${l[0]}: ${money(l[1])}`).join('\n') + `\nEstimated total from ${money(total)}` : '';
+  };
+  ['mode','dist','express'].forEach(id => $(id).addEventListener('change', calc));
+  calc();
+  $('useEst').addEventListener('click', () => {
+    const m = $('mode').value;
+    $('f-mode').selectedIndex = m === 'drop' ? 0 : m === 'collect' ? 1 : 2;
+    if (summary) $('f-msg').value = summary + ($('f-msg').value ? '\n\n' + $('f-msg').value : '');
+    $('quote').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+    $('f-name').focus({preventScroll:true});
+  });
+
+  // quote form
+  let body = '';
+  $('qform').addEventListener('submit', async e => {
+    e.preventDefault();
+    const v = id => $(id).value.trim();
+    if (!v('f-name') || !v('f-phone')) { $('ferr').textContent = 'Please add your name and phone number so we can get back to you.'; return; }
+    $('ferr').textContent = '';
+    const data = {name:v('f-name'), phone:v('f-phone'), email:v('f-email'), suburb:v('f-suburb'), type:v('f-type'), mode:v('f-mode'), neededBy:v('f-date'), message:v('f-msg')};
+    body = `Name: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nSuburb: ${data.suburb}\nType of work: ${data.type}\nDrop-off or mobile: ${data.mode}\nNeeded by: ${data.neededBy || 'Not specified'}\n\n${data.message}`;
+    if (FORM_ENDPOINT) {
+      try {
+        const r = await fetch(FORM_ENDPOINT, {method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(data)});
+        if (!r.ok) throw new Error();
+        $('sentMsg').textContent = "Thanks! We've received your request and will reply with an itemised quote soon.";
+        $('sentBody').hidden = true; $('copyBtn').hidden = true;
+        $('qform').style.display = 'none'; $('sent').style.display = 'block'; return;
+      } catch (err) { /* fall back to email below */ }
+    }
+    $('sentBody').textContent = body;
+    $('qform').style.display = 'none'; $('sent').style.display = 'block';
+    location.href = `mailto:${EMAIL}?subject=${encodeURIComponent('Quote request – ' + data.name)}&body=${encodeURIComponent(body)}`;
+  });
+  $('copyBtn').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(body); $('copyBtn').textContent = 'Copied'; }
+    catch (err) { $('copyBtn').textContent = 'Select the text above to copy'; }
+  });
+  $('yr').textContent = new Date().getFullYear();
+}
+</script>
+</body>
+</html>
